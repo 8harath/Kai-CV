@@ -7,7 +7,8 @@
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nConfigure for Vercel deployment\n\n- Rename presentation.html to index.html for Vercel compatibility\n- Add vercel.json configuration file\n- Add comprehensive README.md with documentation\n- Ready for deployment on Vercel\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nConfigure for Vercel deployment\n\n- Rename presentation.html to index.html for Vercel compatibility\n- Add vercel.json configuration file\n- Add comprehensive README.md with documentation\n- Ready for deployment on Vercel\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

@@ -233,183 +233,70 @@
 
         li {
             margin: 1.5vh 0;
-            font-size: clamp(0.95rem, 1.5vw, 1.3rem);
-            line-height: 1.6;
+            font-size: clamp(0.95rem, 1.6vw, 1.3rem);
+            line-height: 1.7;
             color: #000;
         }
 
-        li strong {
+        .checkmark {
             color: #000;
-            font-weight: 700;
-        }
-
-        /* Grid Layouts */
-        .three-col-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2vw;
-            margin: 3vh 0;
-        }
-
-        .two-col-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2vw;
-            margin: 3vh 0;
-        }
-
-        .grid-item {
-            background: #f8f8f8;
-            padding: 2.5vh 2vw;
-            border-radius: 0;
-            border: 2px solid #000;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .grid-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 8px 8px 0px #000;
-        }
-
-        .grid-item h4 {
-            margin-bottom: 1.5vh;
-            font-size: clamp(1rem, 1.6vw, 1.5rem);
-        }
-
-        .grid-item p {
-            font-size: clamp(0.9rem, 1.3vw, 1.2rem);
-            color: #333;
-            line-height: 1.5;
+            font-weight: bold;
+            margin-right: 10px;
         }
 
         /* Protocol Cards */
         .protocol-card {
             background: #f8f8f8;
-            padding: 2.5vh 2vw;
+            padding: 3vh 2vw;
             margin: 2vh 0;
-            border-radius: 0;
-            border: 2px solid #000;
             border-left: 8px solid #000;
         }
 
         .protocol-card.blue {
-            border-left-color: #000;
+            border-left-color: #333;
         }
 
         .protocol-card.purple {
-            border-left-color: #000;
+            border-left-color: #666;
         }
 
         .protocol-card h3 {
             margin-top: 0;
+            margin-bottom: 1.5vh;
         }
 
-        /* Score Display */
+        /* Score Cards */
         .score-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 3vh 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2vw;
+            margin: 3vh 0;
         }
 
         .score-card {
-            flex: 1;
-            background: #000;
-            color: #fff;
+            background: #f8f8f8;
             padding: 3vh 2vw;
-            border-radius: 0;
             text-align: center;
             border: 3px solid #000;
-            transition: transform 0.3s ease;
-        }
-
-        .score-card:hover {
-            transform: scale(1.05);
-        }
-
-        .score-card h3 {
-            font-size: clamp(1.2rem, 2vw, 2rem);
-            margin: 0 0 2vh 0;
-            color: #fff;
         }
 
         .score-number {
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 900;
-            color: #fff;
-            font-family: 'Merriweather', serif;
+            color: #000;
+            margin: 2vh 0;
         }
 
         .score-label {
-            font-size: clamp(0.9rem, 1.3vw, 1.2rem);
-            color: #ccc;
-            margin-top: 1.5vh;
-        }
-
-        /* Phase Boxes */
-        .phase-box {
-            background: #f5f5f5;
-            padding: 2vh 2.5vw;
-            margin: 2vh 0;
-            border-radius: 0;
-            border: 2px solid #000;
-            border-left: 6px solid #000;
-        }
-
-        .phase-box h4 {
-            color: #000;
-            margin-bottom: 1.5vh;
-            font-size: clamp(1rem, 1.5vw, 1.4rem);
-        }
-
-        /* Vulnerability Items */
-        .vulnerability-item {
-            background: #e8e8e8;
-            padding: 2vh 2.5vw;
-            margin: 1.5vh 0;
-            border-radius: 0;
-            border-left: 6px solid #000;
-            font-size: clamp(0.95rem, 1.4vw, 1.3rem);
-        }
-
-        .strength-item {
-            background: #f5f5f5;
-            padding: 2vh 2.5vw;
-            margin: 1.5vh 0;
-            border-radius: 0;
-            border-left: 6px solid #000;
-            font-size: clamp(0.95rem, 1.4vw, 1.3rem);
-        }
-
-        /* Key Question */
-        .key-question {
-            background: #000;
-            color: #fff;
-            padding: 3vh 3vw;
-            margin: 3vh 0;
-            border-radius: 0;
-            border: 3px solid #000;
-            font-size: clamp(1.2rem, 2vw, 1.8rem);
-            font-weight: 600;
-            text-align: center;
-            box-shadow: 8px 8px 0px #666;
-        }
-
-        /* Technical Steps */
-        .technical-step {
-            background: #f5f5f5;
-            padding: 2vh 2.5vw;
-            margin: 1.5vh 0;
-            border-radius: 0;
-            border: 2px solid #000;
-            font-size: clamp(0.95rem, 1.4vw, 1.3rem);
+            font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+            color: #333;
+            font-weight: 500;
         }
 
         /* Impact Grid */
         .impact-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2vw;
             margin: 3vh 0;
         }
@@ -417,67 +304,123 @@
         .impact-card {
             background: #f8f8f8;
             padding: 2.5vh 2vw;
-            border-radius: 0;
-            border: 2px solid #000;
-            transition: transform 0.3s ease;
-        }
-
-        .impact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 6px 6px 0px #000;
+            border-left: 6px solid #000;
         }
 
         .impact-card h4 {
-            font-size: clamp(1rem, 1.6vw, 1.5rem);
-            margin-bottom: 1.5vh;
+            margin-top: 0;
         }
 
         .impact-card p {
-            font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+            font-size: clamp(0.9rem, 1.4vw, 1.2rem);
             color: #333;
+            line-height: 1.6;
         }
 
-        /* Checkmarks */
-        .checkmark {
+        /* Key Question Box */
+        .key-question {
+            background: #f0f0f0;
+            padding: 4vh 3vw;
+            margin: 3vh 0;
+            border-left: 8px solid #000;
+            font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+            font-style: italic;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* Technical Steps */
+        .technical-step {
+            background: #f8f8f8;
+            padding: 2vh 2vw;
+            margin: 1.5vh 0;
+            border-left: 6px solid #000;
+            font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+        }
+
+        .technical-step strong {
             color: #000;
-            font-weight: bold;
-            font-size: 1.3em;
-            margin-right: 1vw;
+            display: block;
+            margin-bottom: 0.5vh;
+        }
+
+        /* Strength Items */
+        .strength-item {
+            background: #f8f8f8;
+            padding: 2vh 2vw;
+            margin: 1.5vh 0;
+            border-left: 6px solid #000;
+            font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+        }
+
+        .strength-item strong {
+            color: #000;
+        }
+
+        /* Navigation Controls */
+        .navigation {
+            position: fixed;
+            bottom: 3vh;
+            right: 3vw;
+            display: flex;
+            gap: 2vw;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 1.5vh 2vw;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: #333;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 3vh;
+            left: 3vw;
+            background: #000;
+            color: #fff;
+            padding: 1.5vh 2vw;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            font-weight: 500;
+            z-index: 1000;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 1400px) {
-            .slide {
-                padding: 3vh 4vw;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .slide {
-                padding: 2.5vh 3vw;
-            }
-            .three-col-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 768px) {
             .slide {
-                padding: 2vh 2.5vw;
-                border: 10px solid #000;
+                padding: 3vh 4vw;
+                border-width: 10px;
             }
-            .three-col-grid,
-            .two-col-grid,
+
+            .navigation {
+                bottom: 2vh;
+                right: 2vw;
+                gap: 1vw;
+            }
+
+            .slide-counter {
+                bottom: 2vh;
+                left: 2vw;
+            }
+
+            .score-container,
             .impact-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            .slide {
-                page-break-after: always;
-                border: 2px solid #000;
             }
         }
     </style>
@@ -485,158 +428,401 @@
 <body>
     <div class="presentation-wrapper">
         <div class="slide-container">
-
-            <!-- SLIDE 1: Title Slide -->
+            
+            <!-- SLIDE 1: Title -->
             <div class="slide title-slide active" data-slide="1">
                 <div class="title-content">
-                    <h1>Proof-of-Humanity as a Solution to AGI-Induced Identity Crisis in Digital Ecosystems</h1>
+                    <h1>PROOF-OF-HUMANITY AS A SOLUTION TO AGI-INDUCED IDENTITY CRISIS IN DIGITAL ECOSYSTEMS</h1>
                     <div class="team-info-box">
                         <p><strong>Team Number:</strong> 163</p>
-                        <p><strong>Team Members:</strong> Bharath K, Lochan S, David Matikke Fonteh</p>
+                        <p><strong>Course:</strong> Research Methodology (Activity 4)</p>
                         <p><strong>Specialization:</strong> Data Analytics</p>
                         <p><strong>Institution:</strong> Jain (Deemed-to-be University)</p>
                         <p><strong>Date:</strong> November 2025</p>
                     </div>
+                    <div class="team-info-box" style="margin-top: 3vh;">
+                        <p><strong>Team Members:</strong></p>
+                        <p>Bharath K (23BCAR0252)</p>
+                        <p>Lochan S (23BCAR0263)</p>
+                        <p>David Matikke Fonteh (23BCAR0621)</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- SLIDE 2: Problem Statement -->
+            <!-- SLIDE 2: Background -->
             <div class="slide" data-slide="2">
                 <div class="slide-header">
-                    <h2>Problem Statement & Context</h2>
+                    <h2>Background</h2>
                 </div>
                 <div class="slide-content">
-                    <div class="challenge-box content-box">
-                        <h3>The Challenge</h3>
-                        <ul>
-                            <li>AI systems now outperform humans in CAPTCHA tests <strong>(99.8% vs 71-85%)</strong></li>
-                            <li>Deepfakes can defeat biometric authentication</li>
-                            <li>AGI threatens democratic processes, social media, financial systems</li>
-                        </ul>
+                    <div class="info-box content-box">
+                        <h3>The Digital Identity Landscape</h3>
+                        <p>Modern digital ecosystems operate on the assumption that certain cognitive, behavioral, and physiological patterns remain uniquely human.</p>
                     </div>
-                    <div class="key-question">
-                        "How do we prove someone is human in the AGI era?"
+                    
+                    <h3>Current Authentication Mechanisms</h3>
+                    <ul>
+                        <li><strong>CAPTCHA Systems:</strong> Challenge-response tests exploiting presumed cognitive gaps between humans and machines</li>
+                        <li><strong>Biometric Systems:</strong> Facial recognition, iris scanning, fingerprint verification</li>
+                        <li><strong>Social Verification:</strong> Relationship-based authentication through network analysis</li>
+                        <li><strong>Behavioral Biometrics:</strong> Keystroke dynamics, mouse movement patterns, interaction rhythms</li>
+                    </ul>
+
+                    <div class="challenge-box content-box">
+                        <h3>The Emergence of AGI</h3>
+                        <p>Artificial General Intelligence represents systems with human-level cognitive capabilities across multiple domains—fundamentally challenging the assumptions underlying all current verification methods.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 3: Trilemma -->
+            <!-- SLIDE 3: Problem Statement -->
             <div class="slide" data-slide="3">
                 <div class="slide-header">
-                    <h2>The Proof of Personhood Trilemma</h2>
+                    <h2>Problem Statement</h2>
                 </div>
                 <div class="slide-content">
-                    <div class="three-col-grid">
-                        <div class="grid-item">
-                            <h4>Decentralization</h4>
-                            <p>No single point of control</p>
-                        </div>
-                        <div class="grid-item">
-                            <h4>Scalability</h4>
-                            <p>Works for millions of users</p>
-                        </div>
-                        <div class="grid-item">
-                            <h4>AGI-Resistance</h4>
-                            <p>Can't be fooled by AI</p>
-                        </div>
+                    <div class="key-question">
+                        "How can digital systems reliably verify human identity when AI systems achieve human-level performance across all distinguishing characteristics?"
                     </div>
-                    <div class="warning-box content-box">
-                        <h3>Current Reality</h3>
-                        <p style="font-size: clamp(1rem, 1.5vw, 1.3rem); margin-bottom: 1.5vh;"><strong>Systems can only achieve 2 out of 3</strong></p>
-                        <ul>
-                            <li><strong>Worldcoin:</strong> AGI-resistant + Scalable, but Centralized</li>
-                            <li><strong>BrightID:</strong> Decentralized + Scalable, but vulnerable to AGI</li>
-                        </ul>
+
+                    <h3>The Crisis: Systematic Vulnerability</h3>
+                    <div class="challenge-box content-box">
+                        <h4>CAPTCHA Obsolescence</h4>
+                        <p>AI systems now solve visual CAPTCHAs with 99.8% accuracy compared to 71-85% human accuracy</p>
                     </div>
+
+                    <div class="challenge-box content-box">
+                        <h4>Deepfake Threats</h4>
+                        <p>Generative AI produces synthetic biometric data that defeats authentication systems</p>
+                    </div>
+
+                    <div class="challenge-box content-box">
+                        <h4>Social Graph Manipulation</h4>
+                        <p>AGI can systematically create synthetic social networks over time</p>
+                    </div>
+
+                    <h3>The Proof of Personhood Trilemma</h3>
+                    <p>Existing systems cannot simultaneously achieve:</p>
+                    <ul>
+                        <li><strong>Decentralization</strong> - No central authority or single point of failure</li>
+                        <li><strong>Scalability</strong> - Handle millions of users with acceptable performance</li>
+                        <li><strong>AGI-Resistance</strong> - Withstand sophisticated AI-powered attacks</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- SLIDE 4: Methodology -->
+            <!-- SLIDE 4: Research Questions -->
             <div class="slide" data-slide="4">
                 <div class="slide-header">
-                    <h2>Research Methodology</h2>
+                    <h2>Research Questions</h2>
                 </div>
                 <div class="slide-content">
-                    <h3>Three-Phase Approach</h3>
-                    <div class="phase-box">
-                        <h4>Phase 1: Literature Review (Weeks 1-3)</h4>
-                        <ul>
-                            <li>12 key papers analyzed</li>
-                            <li>Vulnerability assessment of existing systems</li>
-                        </ul>
+                    <div class="info-box content-box">
+                        <h3>Primary Research Question</h3>
+                        <p>Can cryptographic protocols combining zero-knowledge proofs, hardware attestation, and decentralized verification networks create AGI-resistant identity systems that simultaneously optimize decentralization, scalability, and security?</p>
                     </div>
-                    <div class="phase-box">
-                        <h4>Phase 2: Protocol Design (Weeks 3-6)</h4>
-                        <ul>
-                            <li>Developed 3 novel protocols</li>
-                        </ul>
+
+                    <h3>Secondary Research Questions</h3>
+                    
+                    <div class="content-box">
+                        <h4>RQ1: Vulnerability Assessment</h4>
+                        <p>What are the fundamental vulnerabilities in existing identity verification systems when confronted with AGI-level adversaries?</p>
                     </div>
-                    <div class="phase-box">
-                        <h4>Phase 3: Comparative Evaluation (Weeks 7-9)</h4>
-                        <ul>
-                            <li>Systematic scoring framework</li>
-                            <li>Weighted metrics across 4 dimensions</li>
-                        </ul>
+
+                    <div class="content-box">
+                        <h4>RQ2: Protocol Architecture</h4>
+                        <p>How can zero-knowledge proofs, trusted execution environments, and decentralized networks be systematically integrated into practical verification protocols?</p>
+                    </div>
+
+                    <div class="content-box">
+                        <h4>RQ3: Trade-off Analysis</h4>
+                        <p>What are the performance, usability, and deployment trade-offs across different architectural approaches?</p>
+                    </div>
+
+                    <div class="content-box">
+                        <h4>RQ4: Real-World Applicability</h4>
+                        <p>Which protocols are optimal for specific deployment scenarios (financial systems, democratic voting, social platforms)?</p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 5: Literature Review -->
+            <!-- SLIDE 5: Research Objectives -->
             <div class="slide" data-slide="5">
                 <div class="slide-header">
-                    <h2>Literature Review - Key Findings</h2>
+                    <h2>Research Objectives</h2>
                 </div>
                 <div class="slide-content">
-                    <h3>System Vulnerabilities Discovered</h3>
-                    <div class="vulnerability-item">
-                        <strong>CAPTCHA:</strong> Completely compromised (Critical - 5/5)
+                    <h3>Primary Objectives</h3>
+                    
+                    <div class="success-box content-box">
+                        <h4>Objective 1: Comprehensive Vulnerability Documentation</h4>
+                        <p>Systematically identify and analyze vulnerabilities in existing Proof-of-Humanity systems through literature review and threat modeling.</p>
                     </div>
-                    <div class="vulnerability-item">
-                        <strong>Biometrics:</strong> Deepfake threats (High - 4/5)
+
+                    <div class="success-box content-box">
+                        <h4>Objective 2: Novel Protocol Development</h4>
+                        <p>Design three AGI-resistant identity verification protocols (PMAP, HAP, DAP) addressing identified vulnerabilities through integration of cryptographic and hardware security.</p>
                     </div>
-                    <div class="vulnerability-item">
-                        <strong>Social Graphs:</strong> Synthetic network generation (High - 4/5)
+
+                    <div class="success-box content-box">
+                        <h4>Objective 3: Systematic Evaluation</h4>
+                        <p>Develop and apply comprehensive evaluation framework assessing protocols across security, performance, usability, and deployment dimensions.</p>
                     </div>
-                    <div class="vulnerability-item">
-                        <strong>Behavioral AI:</strong> Pattern replication (High - 4/5)
+
+                    <div class="success-box content-box">
+                        <h4>Objective 4: Trilemma Resolution Analysis</h4>
+                        <p>Determine the extent to which proposed protocols advance toward simultaneous optimization of decentralization, scalability, and AGI-resistance.</p>
+                    </div>
+
+                    <div class="success-box content-box">
+                        <h4>Objective 5: Practical Deployment Guidelines</h4>
+                        <p>Provide actionable recommendations for protocol selection and implementation based on application-specific requirements.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 6: Solutions -->
+            <!-- SLIDE 6: Introduction -->
             <div class="slide" data-slide="6">
                 <div class="slide-header">
-                    <h2>Our Three Proposed Solutions</h2>
+                    <h2>Introduction</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="key-question">
+                        The rapid advancement of Artificial General Intelligence represents a fundamental inflection point in digital identity verification.
+                    </div>
+
+                    <h3>The Challenge</h3>
+                    <p>Contemporary verification mechanisms assume certain patterns remain uniquely human. Recent AI advances systematically erode these assumptions:</p>
+                    <ul>
+                        <li>AI surpasses human performance in visual reasoning tasks</li>
+                        <li>Synthetic biometric data becomes indistinguishable from authentic samples</li>
+                        <li>Behavioral patterns are accurately simulated with increasing sophistication</li>
+                    </ul>
+
+                    <h3>Research Scope</h3>
+                    <div class="info-box content-box">
+                        <h4>What This Research Addresses</h4>
+                        <ul>
+                            <li><strong>Technical:</strong> Cryptographic protocol design for AGI-resistant verification</li>
+                            <li><strong>Epistemological:</strong> What constitutes verifiable humanness in the AGI era</li>
+                            <li><strong>Governance:</strong> Institutional frameworks for decentralized identity</li>
+                            <li><strong>Ethical:</strong> Privacy preservation and digital equity considerations</li>
+                        </ul>
+                    </div>
+
+                    <h3>Our Approach</h3>
+                    <p>Three novel protocols integrating zero-knowledge proofs, hardware attestation, and decentralized verification networks to create AGI-resistant systems while preserving privacy and avoiding centralized control.</p>
+                </div>
+            </div>
+
+            <!-- SLIDE 7: Review of Related Works (Part 1) -->
+            <div class="slide" data-slide="7">
+                <div class="slide-header">
+                    <h2>Review of Related Works - Vulnerability Assessment</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>CAPTCHA Systems (Cohen, 2025)</h3>
+                    <div class="warning-box content-box">
+                        <p><strong>Finding:</strong> Multi-modal AI achieves 99.8% accuracy vs. 71-85% human performance</p>
+                        <p><strong>Impact:</strong> Fundamental premise invalidated—cognitive gap no longer exists</p>
+                    </div>
+
+                    <h3>Biometric Authentication (1Kosmos Inc., 2025)</h3>
+                    <div class="warning-box content-box">
+                        <p><strong>Presentation Attacks:</strong> Synthetic content displayed to sensors</p>
+                        <p><strong>Injection Attacks:</strong> Data stream manipulation within pipeline</p>
+                        <p><strong>Challenge:</strong> GANs produce increasingly convincing synthetic biometrics</p>
+                    </div>
+
+                    <h3>Social Graph Verification (Mittal et al., 2009)</h3>
+                    <div class="warning-box content-box">
+                        <p><strong>SybilInfer Algorithm:</strong> Probabilistic detection using Bayesian inference</p>
+                        <p><strong>Limitation:</strong> Vulnerable to patient adversaries building authentic-appearing networks over time</p>
+                    </div>
+
+                    <h3>Privacy Concerns (Sümer & Elbi, 2024)</h3>
+                    <div class="challenge-box content-box">
+                        <p>Analysis of Worldcoin revealed systematic GDPR violations including excessive biometric collection, insufficient transparency, and centralized data risks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 8: Review of Related Works (Part 2) -->
+            <div class="slide" data-slide="8">
+                <div class="slide-header">
+                    <h2>Review of Related Works - Technical Foundations</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>Zero-Knowledge Proofs (Khan et al., 2025)</h3>
+                    <div class="info-box content-box">
+                        <p><strong>zk-SNARKs:</strong> Compact proofs, fast verification, requires trusted setup</p>
+                        <p><strong>zk-STARKs:</strong> No trusted setup, larger proofs</p>
+                        <p><strong>Bulletproofs:</strong> Balanced trade-offs, no setup</p>
+                        <p><strong>Key Benefit:</strong> Verification without information disclosure</p>
+                    </div>
+
+                    <h3>Hardware Attestation (Frassetto et al., 2022)</h3>
+                    <div class="info-box content-box">
+                        <p><strong>TEE Platforms:</strong> Intel SGX, ARM TrustZone, AMD SEV</p>
+                        <p><strong>Capability:</strong> Remote attestation proves code executes in genuine, uncompromised hardware</p>
+                        <p><strong>Limitation:</strong> Side-channel vulnerabilities, limited availability</p>
+                    </div>
+
+                    <h3>Decentralized Identity Challenges (Satybaldy et al., 2024-2025)</h3>
+                    <div class="challenge-box content-box">
+                        <p><strong>Technical:</strong> Key recovery, interoperability</p>
+                        <p><strong>Legal:</strong> Regulatory compliance, liability frameworks</p>
+                        <p><strong>Social:</strong> User understanding, trust establishment</p>
+                    </div>
+
+                    <h3>Research Gap Identified</h3>
+                    <p>No existing framework successfully integrates cryptographic primitives, hardware security, and decentralized architectures to simultaneously achieve the trilemma requirements.</p>
+                </div>
+            </div>
+
+            <!-- SLIDE 9: Materials and Methods (Part 1) -->
+            <div class="slide" data-slide="9">
+                <div class="slide-header">
+                    <h2>Materials and Methods - Research Design</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="info-box content-box">
+                        <h3>Research Philosophy</h3>
+                        <p><strong>Paradigm:</strong> Constructivist - knowledge emerges through systematic design, evaluation, and refinement</p>
+                        <p><strong>Approach:</strong> Design Science Methodology + Qualitative Comparative Analysis</p>
+                    </div>
+
+                    <h3>Research Methodology</h3>
+                    <div class="content-box">
+                        <h4>Type: Exploratory and Design-Oriented</h4>
+                        <p><strong>Duration:</strong> 10 weeks (September-November 2025)</p>
+                    </div>
+
+                    <h3>Three-Phase Research Process</h3>
+                    
+                    <div class="protocol-card">
+                        <h4>Phase 1: Systematic Literature Review (Weeks 1-3)</h4>
+                        <ul>
+                            <li><strong>Data Sources:</strong> IEEE Xplore, ACM Digital Library, arXiv, Google Scholar</li>
+                            <li><strong>Selection:</strong> 12 key papers across 5 critical domains</li>
+                            <li><strong>Analysis:</strong> Vulnerability assessment, trilemma mapping, threat modeling</li>
+                        </ul>
+                    </div>
+
+                    <div class="protocol-card blue">
+                        <h4>Phase 2: Protocol Design (Weeks 3-6)</h4>
+                        <ul>
+                            <li><strong>Design Principles:</strong> Defense-in-depth, least privilege, privacy-by-design</li>
+                            <li><strong>Output:</strong> Three formal protocol specifications (PMAP, HAP, DAP)</li>
+                        </ul>
+                    </div>
+
+                    <div class="protocol-card purple">
+                        <h4>Phase 3: Comparative Evaluation (Weeks 7-10)</h4>
+                        <ul>
+                            <li><strong>Framework:</strong> 4 dimensions, weighted scoring (40% security, 25% performance, 20% usability, 15% deployment)</li>
+                            <li><strong>Validation:</strong> Peer review, sensitivity analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 10: Materials and Methods (Part 2) - Protocol Designs -->
+            <div class="slide" data-slide="10">
+                <div class="slide-header">
+                    <h2>Materials and Methods - Protocol Architectures</h2>
                 </div>
                 <div class="slide-content">
                     <div class="protocol-card">
-                        <h3>PMAP (Privacy-Maximizing Attestation Protocol)</h3>
+                        <h3>PMAP: Privacy-Maximizing Attestation Protocol</h3>
+                        <p><strong>Core Innovation:</strong> Hardware security + Zero-knowledge proofs</p>
                         <ul>
-                            <li>Hardware security + Zero-knowledge proofs</li>
-                            <li><strong>Best for:</strong> High-security financial systems</li>
+                            <li><strong>Hardware:</strong> Trusted Execution Environment (TEE) - Intel SGX, ARM TrustZone</li>
+                            <li><strong>Cryptography:</strong> zk-SNARKs for privacy-preserving verification</li>
+                            <li><strong>Storage:</strong> Decentralized ledger for credential management</li>
+                            <li><strong>Key Benefit:</strong> Tamper-resistant + surveillance-resistant</li>
                         </ul>
                     </div>
+
                     <div class="protocol-card blue">
-                        <h3>HAP (Hybrid Assurance Protocol)</h3>
+                        <h3>HAP: Hybrid Assurance Protocol</h3>
+                        <p><strong>Core Innovation:</strong> Multi-factor defense-in-depth</p>
                         <ul>
-                            <li>Multi-factor: Biometric + Social + Behavioral</li>
-                            <li><strong>Best for:</strong> General-purpose platforms</li>
+                            <li><strong>Channel 1:</strong> Biometric authentication (facial/iris)</li>
+                            <li><strong>Channel 2:</strong> Social graph verification</li>
+                            <li><strong>Channel 3:</strong> Behavioral analysis over time</li>
+                            <li><strong>Mechanism:</strong> Weighted trust scoring with dynamic adjustment</li>
+                            <li><strong>Key Benefit:</strong> Adversary must compromise multiple independent channels</li>
                         </ul>
                     </div>
+
                     <div class="protocol-card purple">
-                        <h3>DAP (Decentralized Auditor Protocol)</h3>
+                        <h3>DAP: Decentralized Auditor Protocol</h3>
+                        <p><strong>Core Innovation:</strong> Cryptoeconomic peer-to-peer verification</p>
                         <ul>
-                            <li>Peer-to-peer verification + Economic incentives</li>
-                            <li><strong>Best for:</strong> Democratic voting, censorship-resistant systems</li>
+                            <li><strong>Network:</strong> Independent auditor nodes without central coordination</li>
+                            <li><strong>Incentives:</strong> Stake-based penalties and rewards</li>
+                            <li><strong>Consensus:</strong> Byzantine Fault Tolerant (2/3+1 threshold)</li>
+                            <li><strong>Key Benefit:</strong> Maximum decentralization with economic security</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 7: Results -->
-            <div class="slide" data-slide="7">
+            <!-- SLIDE 11: Materials and Methods (Part 3) - Evaluation Framework -->
+            <div class="slide" data-slide="11">
                 <div class="slide-header">
-                    <h2>Comparative Results</h2>
+                    <h2>Materials and Methods - Evaluation Framework</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>Comprehensive Assessment Dimensions</h3>
+                    
+                    <div class="content-box">
+                        <h4>Security Metrics (40% weight - Highest Priority)</h4>
+                        <ul>
+                            <li><strong>Attack Resistance:</strong> Robustness against AGI-level adversaries (1-10 scale)</li>
+                            <li><strong>Privacy Protection:</strong> User data protection and anonymity (1-10 scale)</li>
+                            <li><strong>Sybil Resistance:</strong> Prevention of multiple identity creation (1-10 scale)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-box">
+                        <h4>Performance Metrics (25% weight)</h4>
+                        <ul>
+                            <li><strong>Verification Latency:</strong> Fast (<1s), Medium (1-5s), Slow (>5s)</li>
+                            <li><strong>Scalability:</strong> User capacity (Low/Medium/High)</li>
+                            <li><strong>Resource Requirements:</strong> Computational and storage overhead</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-box">
+                        <h4>Usability Metrics (20% weight)</h4>
+                        <ul>
+                            <li><strong>User Friction:</strong> Registration and verification complexity</li>
+                            <li><strong>Hardware Accessibility:</strong> Device availability globally</li>
+                            <li><strong>User Experience:</strong> Interface intuitiveness and error tolerance</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-box">
+                        <h4>Deployment Feasibility (15% weight)</h4>
+                        <ul>
+                            <li><strong>Implementation Complexity:</strong> Development effort required</li>
+                            <li><strong>Infrastructure Needs:</strong> Compatibility with existing systems</li>
+                            <li><strong>Regulatory Compliance:</strong> GDPR, CCPA conformance</li>
+                        </ul>
+                    </div>
+
+                    <h3>Scoring Methodology</h3>
+                    <p><strong>Evidence Sources:</strong> Literature data + Theoretical analysis + Expert judgment</p>
+                    <p><strong>Composite Score:</strong> Weighted average across all dimensions</p>
+                </div>
+            </div>
+
+            <!-- SLIDE 12: Results - Comparative Performance -->
+            <div class="slide" data-slide="12">
+                <div class="slide-header">
+                    <h2>Results - Comparative Performance</h2>
                 </div>
                 <div class="slide-content">
                     <h3>Overall Scores (out of 10)</h3>
@@ -644,133 +830,166 @@
                         <div class="score-card">
                             <h3>HAP</h3>
                             <div class="score-number">7.3</div>
-                            <div class="score-label">Most balanced</div>
+                            <div class="score-label">Most Balanced</div>
                         </div>
                         <div class="score-card">
                             <h3>PMAP</h3>
                             <div class="score-number">7.0</div>
-                            <div class="score-label">Highest security: 8.3</div>
+                            <div class="score-label">Highest Security</div>
                         </div>
                         <div class="score-card">
                             <h3>DAP</h3>
                             <div class="score-number">6.8</div>
-                            <div class="score-label">Max decentralization: 9.0</div>
+                            <div class="score-label">Max Decentralization</div>
                         </div>
                     </div>
-                    <h3>Key Strengths</h3>
+
+                    <h3>Detailed Dimension Scores</h3>
                     <div class="strength-item">
-                        <strong>PMAP:</strong> Privacy (9.5/10), Attack Resistance (8.5/10)
+                        <strong>Security:</strong> PMAP (8.3) > DAP (8.0) > HAP (7.7)
                     </div>
                     <div class="strength-item">
-                        <strong>HAP:</strong> Usability (7.0/10), Scalability (8.0/10)
+                        <strong>Performance:</strong> HAP (7.3) > PMAP (6.7) > DAP (5.7)
                     </div>
                     <div class="strength-item">
-                        <strong>DAP:</strong> Decentralization (9.0/10), No central authority
+                        <strong>Usability:</strong> HAP (7.0) > DAP (6.0) > PMAP (5.3)
+                    </div>
+                    <div class="strength-item">
+                        <strong>Deployment:</strong> HAP (7.0) > PMAP (6.0) > DAP (5.3)
+                    </div>
+
+                    <h3>Key Strengths by Protocol</h3>
+                    <ul>
+                        <li><strong>PMAP:</strong> Privacy Protection (9.5/10), Attack Resistance (8.5/10)</li>
+                        <li><strong>HAP:</strong> Scalability (8.0/10), Balanced across all dimensions</li>
+                        <li><strong>DAP:</strong> Decentralization (9.0/10), No central authority required</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SLIDE 13: Results - Trilemma Analysis -->
+            <div class="slide" data-slide="13">
+                <div class="slide-header">
+                    <h2>Results - Trilemma Resolution Analysis</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>Proof of Personhood Trilemma Performance</h3>
+                    
+                    <div class="protocol-card">
+                        <h4>PMAP Performance</h4>
+                        <ul>
+                            <li><strong>Decentralization:</strong> 7.5/10 (Strong) - Ledger-based, no central authority</li>
+                            <li><strong>Scalability:</strong> 7.0/10 (High) - Efficient ZKP verification</li>
+                            <li><strong>AGI-Resistance:</strong> 8.5/10 (Very High) - Hardware + cryptographic security</li>
+                        </ul>
+                        <p><strong>Achievement:</strong> Excellent security & scalability, good decentralization</p>
+                    </div>
+
+                    <div class="protocol-card blue">
+                        <h4>HAP Performance</h4>
+                        <ul>
+                            <li><strong>Decentralization:</strong> 7.0/10 (Good) - Distributed validators</li>
+                            <li><strong>Scalability:</strong> 8.0/10 (Very High) - Minimal coordination overhead</li>
+                            <li><strong>AGI-Resistance:</strong> 8.0/10 (High) - Multi-factor defense</li>
+                        </ul>
+                        <p><strong>Achievement:</strong> Most balanced performance across all three dimensions</p>
+                    </div>
+
+                    <div class="protocol-card purple">
+                        <h4>DAP Performance</h4>
+                        <ul>
+                            <li><strong>Decentralization:</strong> 9.0/10 (Excellent) - Fully peer-to-peer</li>
+                            <li><strong>Scalability:</strong> 6.0/10 (Medium) - Consensus overhead</li>
+                            <li><strong>AGI-Resistance:</strong> 8.5/10 (Very High) - Economic + cryptographic security</li>
+                        </ul>
+                        <p><strong>Achievement:</strong> Maximum decentralization, good security, moderate scalability</p>
+                    </div>
+
+                    <div class="success-box content-box">
+                        <h3>Key Finding</h3>
+                        <p>All three protocols significantly advance beyond current state-of-art by achieving strong performance across all trilemma dimensions—though fundamental trade-offs persist requiring context-specific protocol selection.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 8: Implications -->
-            <div class="slide" data-slide="8">
+            <!-- SLIDE 14: Discussion and Implications -->
+            <div class="slide" data-slide="14">
                 <div class="slide-header">
-                    <h2>Real-World Implications</h2>
+                    <h2>Discussion and Implications</h2>
                 </div>
                 <div class="slide-content">
-                    <h3>Where This Matters</h3>
+                    <h3>Protocol Selection Guidelines</h3>
+                    
                     <div class="impact-grid">
                         <div class="impact-card">
-                            <h4>Democratic Processes</h4>
-                            <p>Protect elections from bot manipulation</p>
+                            <h4>High-Security Applications</h4>
+                            <p><strong>Recommend: PMAP</strong></p>
+                            <p>Financial systems, critical infrastructure</p>
+                            <p><em>Reason:</em> Superior security (8.3) and privacy (9.5) justify usability trade-offs</p>
                         </div>
                         <div class="impact-card">
-                            <h4>Social Media</h4>
-                            <p>Maintain authentic human discourse</p>
+                            <h4>General-Purpose Applications</h4>
+                            <p><strong>Recommend: HAP</strong></p>
+                            <p>Social media, content platforms</p>
+                            <p><em>Reason:</em> Balanced performance (7.3) with best usability (7.0) and scalability (8.0)</p>
                         </div>
                         <div class="impact-card">
-                            <h4>Financial Systems</h4>
-                            <p>Prevent identity fraud at scale</p>
-                        </div>
-                        <div class="impact-card">
-                            <h4>Content Platforms</h4>
-                            <p>Distinguish human-created from AI-generated content</p>
+                            <h4>Decentralization-Critical</h4>
+                            <p><strong>Recommend: DAP</strong></p>
+                            <p>Democratic voting, censorship-resistant platforms</p>
+                            <p><em>Reason:</em> Maximum decentralization (9.0) with no central control</p>
                         </div>
                     </div>
+
+                    <h3>Real-World Impact Areas</h3>
+                    <ul>
+                        <li><strong>Democratic Processes:</strong> Protect elections from bot manipulation</li>
+                        <li><strong>Social Media:</strong> Maintain authentic human discourse</li>
+                        <li><strong>Financial Systems:</strong> Prevent identity fraud at scale</li>
+                        <li><strong>Content Platforms:</strong> Distinguish human from AI-generated content</li>
+                    </ul>
+
                     <div class="challenge-box content-box">
                         <h3>Ethical Considerations</h3>
                         <ul>
-                            <li>Digital equity and accessibility</li>
-                            <li>Privacy protection</li>
-                            <li>Avoiding surveillance infrastructure</li>
+                            <li><strong>Digital Equity:</strong> Ensure accessibility across socioeconomic divides</li>
+                            <li><strong>Privacy:</strong> Prevent surveillance infrastructure</li>
+                            <li><strong>Governance:</strong> Balance decentralization with accountability</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 9: Limitations -->
-            <div class="slide" data-slide="9">
+            <!-- SLIDE 15: References -->
+            <div class="slide" data-slide="15">
                 <div class="slide-header">
-                    <h2>Limitations & Future Research</h2>
+                    <h2>References</h2>
                 </div>
                 <div class="slide-content">
-                    <div class="warning-box content-box">
-                        <h3>Current Limitations</h3>
-                        <ul>
-                            <li>Protocols remain theoretical (not yet implemented)</li>
-                            <li>Hardware dependency creates accessibility barriers</li>
-                            <li>Adversarial evolution requires continuous updates</li>
-                        </ul>
-                    </div>
-                    <div class="success-box content-box">
-                        <h3>Future Directions</h3>
-                        <ul>
-                            <li>Production implementation and empirical testing</li>
-                            <li>Quantum-resistant cryptography integration</li>
-                            <li>Governance framework development</li>
-                            <li>Longitudinal adoption studies</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SLIDE 10: Conclusion -->
-            <div class="slide" data-slide="10">
-                <div class="slide-header">
-                    <h2>Conclusion & Key Takeaways</h2>
-                </div>
-                <div class="slide-content">
-                    <h3>Core Contributions</h3>
-                    <ul style="font-size: clamp(1rem, 1.6vw, 1.4rem); line-height: 1.8;">
-                        <li><span class="checkmark">✓</span> Comprehensive vulnerability documentation</li>
-                        <li><span class="checkmark">✓</span> Three novel AGI-resistant protocols</li>
-                        <li><span class="checkmark">✓</span> Systematic evaluation framework</li>
-                        <li><span class="checkmark">✓</span> Significant trilemma advancement</li>
-                    </ul>
-                    <div class="key-question">
-                        "AGI-resistant identity verification is achievable through systematic integration of cryptographic primitives, hardware security, and decentralized architectures."
-                    </div>
-                </div>
-            </div>
-
-            <!-- SLIDE 11: Technical Deep-Dive (Backup) -->
-            <div class="slide" data-slide="11">
-                <div class="slide-header">
-                    <h2>Technical Deep-Dive: PMAP Architecture</h2>
-                </div>
-                <div class="slide-content">
-                    <div class="technical-step">
-                        <strong>Step 1:</strong> User generates keys in TEE (Trusted Execution Environment)
-                    </div>
-                    <div class="technical-step">
-                        <strong>Step 2:</strong> Biometric enrollment processed in secure hardware
-                    </div>
-                    <div class="technical-step">
-                        <strong>Step 3:</strong> Zero-knowledge proof created
-                    </div>
-                    <div class="technical-step">
-                        <strong>Step 4:</strong> Credential recorded on distributed ledger
-                    </div>
-                    <div class="technical-step">
-                        <strong>Step 5:</strong> Verification without identity disclosure
+                    <div style="font-size: clamp(0.85rem, 1.3vw, 1.1rem); line-height: 1.6;">
+                        <p><strong>[1]</strong> Cohen, N. (2025). CAPTCHA's Demise: Multi-Modal AI is Breaking Traditional Bot Management. Kasada.</p>
+                        
+                        <p><strong>[2]</strong> 1Kosmos Inc. (2025). The Promise of Biometric Authentication Versus the Threat of Deepfakes. Whitepaper.</p>
+                        
+                        <p><strong>[3]</strong> Sümer, B., & Elbi, A. (2024). Worldcoin's biometric proof of personhood – Why does it matter for data protection? KU Leuven Centre for IT & IP Law (CiTiP) Blog.</p>
+                        
+                        <p><strong>[4]</strong> Buterin, V. (2023). What do we talk about when we talk about ZK?</p>
+                        
+                        <p><strong>[5]</strong> Arif, A., et al. (2025). Challenges in Identity Verification for Decentralized PoP Systems. arXiv preprint.</p>
+                        
+                        <p><strong>[6]</strong> Mittal, P., Borisov, N., & Danezis, G. (2009). SybilInfer: Detecting Sybil Nodes in Social Networks. NDSS Symposium.</p>
+                        
+                        <p><strong>[7]</strong> Khan, A., et al. (2025). Zero-Knowledge Proofs For Privacy-Preserving Systems: A Survey. ResearchGate.</p>
+                        
+                        <p><strong>[8]</strong> Frassetto, T., Gens, D., Liebchen, C., & Sadeghi, A.-R. (2022). Demystifying Attestation in Trusted Execution Environments. arXiv:2206.03780.</p>
+                        
+                        <p><strong>[9]</strong> Satybaldy, A., Nowostawski, M., & Ellingsen, J. (2025). Are We There Yet? A Study of Decentralized Identity Applications. ResearchGate.</p>
+                        
+                        <p><strong>[10]</strong> Ahmad, T., et al. (2025). Designing AI-Augmented Intrusion Detection Systems. International Journal of Research Publication and Reviews, 6(6), 568-589.</p>
+                        
+                        <p><strong>[11]</strong> Satybaldy, A., Kolvart, M., Norta, A., & Udokwu, C. (2024). A Taxonomy of Challenges for Self-Sovereign Identity Systems. IEEE Access, 12.</p>
+                        
+                        <p><strong>[12]</strong> Burt, A., Hileman, G., & Seamans, R. (2025). Personhood Credentials: A Defense Against AI-Powered Deception. arXiv preprint.</p>
                     </div>
                 </div>
             </div>
@@ -778,9 +997,20 @@
         </div>
     </div>
 
+    <!-- Navigation Controls -->
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="currentSlideNum">1</span> / <span id="totalSlideNum">15</span>
+    </div>
+
     <script>
         let currentSlide = 1;
-        const totalSlides = 11;
+        const totalSlides = 15;
         let isTransitioning = false;
 
         function showSlide(n) {
@@ -793,6 +1023,13 @@
             else currentSlide = n;
 
             isTransitioning = true;
+
+            // Update counter
+            document.getElementById('currentSlideNum').textContent = currentSlide;
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
 
             // Fade out current slide
             const activeSlide = document.querySelector('.slide.active');
@@ -834,6 +1071,7 @@
         });
 
         // Initialize
+        document.getElementById('totalSlideNum').textContent = totalSlides;
         showSlide(1);
     </script>
 </body>
