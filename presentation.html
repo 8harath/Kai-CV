@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proof-of-Humanity Research Presentation - Team 163</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #000;
+            color: #333;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .presentation-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: none;
+            opacity: 0;
+            padding: 60px 100px;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            animation: slideIn 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide.fade-out {
+            animation: fadeOut 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+        }
+
+        /* Slide Header */
+        .slide-header {
+            border-bottom: 4px solid #ffd700;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .slide h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .slide h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .slide h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: #ffd700;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .slide h4 {
+            font-size: 1.4em;
+            color: #ffd700;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        /* Content Area */
+        .slide-content {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 20px;
+            color: #fff;
+        }
+
+        .slide-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .slide-content::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        .slide-content::-webkit-scrollbar-thumb {
+            background: rgba(255,215,0,0.6);
+            border-radius: 4px;
+        }
+
+        /* Title Slide Specific */
+        .title-slide {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title-content {
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        .title-content h1 {
+            font-size: 4em;
+            margin-bottom: 60px;
+            line-height: 1.3;
+            border-bottom: 5px solid #ffd700;
+            padding-bottom: 30px;
+        }
+
+        .team-info-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 60px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,215,0,0.3);
+            margin-top: 40px;
+        }
+
+        .team-info-box p {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #fff;
+        }
+
+        .team-info-box strong {
+            color: #ffd700;
+        }
+
+        /* Content Boxes */
+        .content-box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border-left: 6px solid #ffd700;
+        }
+
+        .challenge-box {
+            background: rgba(255,193,7,0.2);
+            border-left-color: #ffc107;
+        }
+
+        .info-box {
+            background: rgba(33,150,243,0.2);
+            border-left-color: #2196F3;
+        }
+
+        .success-box {
+            background: rgba(76,175,80,0.2);
+            border-left-color: #4CAF50;
+        }
+
+        .warning-box {
+            background: rgba(255,87,34,0.2);
+            border-left-color: #FF5722;
+        }
+
+        /* Lists */
+        ul {
+            margin: 20px 0;
+            padding-left: 40px;
+        }
+
+        li {
+            margin: 18px 0;
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        li strong {
+            color: #ffd700;
+        }
+
+        /* Grid Layouts */
+        .three-col-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .grid-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 5px solid #ffd700;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+        }
+
+        .grid-item h4 {
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+
+        .grid-item p {
+            font-size: 1.2em;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+
+        /* Protocol Cards */
+        .protocol-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border-left: 8px solid #4CAF50;
+        }
+
+        .protocol-card.blue {
+            border-left-color: #2196F3;
+        }
+
+        .protocol-card.purple {
+            border-left-color: #9C27B0;
+        }
+
+        .protocol-card h3 {
+            margin-top: 0;
+        }
+
+        /* Score Display */
+        .score-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            gap: 30px;
+        }
+
+        .score-card {
+            flex: 1;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid #ffd700;
+            transition: transform 0.3s ease;
+        }
+
+        .score-card:hover {
+            transform: scale(1.05);
+        }
+
+        .score-card h3 {
+            font-size: 2em;
+            margin: 0 0 20px 0;
+            color: #ffd700;
+        }
+
+        .score-number {
+            font-size: 5em;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .score-label {
+            font-size: 1.2em;
+            color: #e0e0e0;
+            margin-top: 15px;
+        }
+
+        /* Phase Boxes */
+        .phase-box {
+            background: rgba(33,150,243,0.2);
+            backdrop-filter: blur(10px);
+            padding: 25px 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 6px solid #2196F3;
+        }
+
+        .phase-box h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        /* Vulnerability Items */
+        .vulnerability-item {
+            background: rgba(244,67,54,0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 6px solid #f44336;
+            font-size: 1.3em;
+        }
+
+        .strength-item {
+            background: rgba(76,175,80,0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 6px solid #4CAF50;
+            font-size: 1.3em;
+        }
+
+        /* Key Question */
+        .key-question {
+            background: rgba(255,215,0,0.25);
+            backdrop-filter: blur(10px);
+            padding: 35px 40px;
+            margin: 30px 0;
+            border-radius: 12px;
+            border: 3px solid #ffd700;
+            font-size: 1.8em;
+            font-weight: 600;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(255,215,0,0.3);
+        }
+
+        /* Technical Steps */
+        .technical-step {
+            background: rgba(33,150,243,0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 6px solid #2196F3;
+            font-size: 1.3em;
+        }
+
+        /* Impact Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .impact-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 5px solid #ffd700;
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-card h4 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .impact-card p {
+            font-size: 1.2em;
+            color: #e0e0e0;
+        }
+
+        /* Checkmarks */
+        .checkmark {
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 15px;
+        }
+
+        /* Slide Footer */
+        .slide-footer {
+            position: absolute;
+            bottom: 30px;
+            right: 80px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: #ffd700;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .slide-number {
+            background: rgba(255,215,0,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid #ffd700;
+        }
+
+        /* Navigation Controls */
+        .nav-controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(255,215,0,0.9);
+            backdrop-filter: blur(10px);
+            color: #1e3c72;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: #ffd700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.6);
+        }
+
+        .nav-btn:disabled {
+            background: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.4);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .progress-indicator {
+            background: rgba(255,215,0,0.9);
+            backdrop-filter: blur(10px);
+            color: #1e3c72;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+        }
+
+        /* Keyboard Hint */
+        .keyboard-hint {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,215,0,0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,215,0,0.4);
+            color: #ffd700;
+            font-size: 0.95em;
+            z-index: 1000;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .keyboard-hint:hover {
+            opacity: 1;
+        }
+
+        .keyboard-hint kbd {
+            background: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin: 0 4px;
+            font-family: monospace;
+        }
+
+        /* Speaking Notes Toggle */
+        .notes-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background: rgba(255,215,0,0.9);
+            backdrop-filter: blur(10px);
+            color: #1e3c72;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+        }
+
+        .notes-toggle:hover {
+            background: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Speaking Notes Panel */
+        .speaking-notes {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px 80px;
+            border-top: 4px solid #ffd700;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            z-index: 999;
+            max-height: 35vh;
+            overflow-y: auto;
+        }
+
+        .speaking-notes.visible {
+            transform: translateY(0);
+        }
+
+        .speaking-notes h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .speaking-notes p {
+            color: #fff;
+            line-height: 1.8;
+            font-size: 1.15em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1400px) {
+            .slide {
+                padding: 40px 60px;
+            }
+            .slide h1 {
+                font-size: 3em;
+            }
+            .slide h2 {
+                font-size: 2.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-wrapper">
+        <div class="slide-container">
+
+            <!-- SLIDE 1: Title Slide -->
+            <div class="slide title-slide active" data-slide="1">
+                <div class="title-content">
+                    <h1>Proof-of-Humanity as a Solution to AGI-Induced Identity Crisis in Digital Ecosystems</h1>
+                    <div class="team-info-box">
+                        <p><strong>Team Number:</strong> 163</p>
+                        <p><strong>Team Members:</strong> Bharath K, Lochan S, David Matikke Fonteh</p>
+                        <p><strong>Specialization:</strong> Data Analytics</p>
+                        <p><strong>Institution:</strong> Jain (Deemed-to-be University)</p>
+                        <p><strong>Date:</strong> November 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: Problem Statement -->
+            <div class="slide" data-slide="2">
+                <div class="slide-header">
+                    <h2>Problem Statement & Context</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="challenge-box content-box">
+                        <h3>The Challenge</h3>
+                        <ul>
+                            <li>AI systems now outperform humans in CAPTCHA tests <strong>(99.8% vs 71-85%)</strong></li>
+                            <li>Deepfakes can defeat biometric authentication</li>
+                            <li>AGI threatens democratic processes, social media, financial systems</li>
+                        </ul>
+                    </div>
+                    <div class="key-question">
+                        "How do we prove someone is human in the AGI era?"
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: Trilemma -->
+            <div class="slide" data-slide="3">
+                <div class="slide-header">
+                    <h2>The Proof of Personhood Trilemma</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="three-col-grid">
+                        <div class="grid-item">
+                            <h4>🔒 Decentralization</h4>
+                            <p>No single point of control</p>
+                        </div>
+                        <div class="grid-item">
+                            <h4>📈 Scalability</h4>
+                            <p>Works for millions of users</p>
+                        </div>
+                        <div class="grid-item">
+                            <h4>🛡️ AGI-Resistance</h4>
+                            <p>Can't be fooled by AI</p>
+                        </div>
+                    </div>
+                    <div class="warning-box content-box">
+                        <h3>Current Reality: Systems can only achieve 2 out of 3</h3>
+                        <ul>
+                            <li><strong>Worldcoin:</strong> AGI-resistant + Scalable, but Centralized</li>
+                            <li><strong>BrightID:</strong> Decentralized + Scalable, but vulnerable to AGI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 4: Methodology -->
+            <div class="slide" data-slide="4">
+                <div class="slide-header">
+                    <h2>Research Methodology</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>Three-Phase Approach</h3>
+                    <div class="phase-box">
+                        <h4>Phase 1: Literature Review (Weeks 1-3)</h4>
+                        <ul>
+                            <li>12 key papers analyzed</li>
+                            <li>Vulnerability assessment of existing systems</li>
+                        </ul>
+                    </div>
+                    <div class="phase-box">
+                        <h4>Phase 2: Protocol Design (Weeks 3-6)</h4>
+                        <ul>
+                            <li>Developed 3 novel protocols</li>
+                        </ul>
+                    </div>
+                    <div class="phase-box">
+                        <h4>Phase 3: Comparative Evaluation (Weeks 7-9)</h4>
+                        <ul>
+                            <li>Systematic scoring framework</li>
+                            <li>Weighted metrics across 4 dimensions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 5: Literature Review -->
+            <div class="slide" data-slide="5">
+                <div class="slide-header">
+                    <h2>Literature Review - Key Findings</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>System Vulnerabilities Discovered</h3>
+                    <div class="vulnerability-item">
+                        <strong>CAPTCHA:</strong> Completely compromised (Critical - 5/5)
+                    </div>
+                    <div class="vulnerability-item">
+                        <strong>Biometrics:</strong> Deepfake threats (High - 4/5)
+                    </div>
+                    <div class="vulnerability-item">
+                        <strong>Social Graphs:</strong> Synthetic network generation (High - 4/5)
+                    </div>
+                    <div class="vulnerability-item">
+                        <strong>Behavioral AI:</strong> Pattern replication (High - 4/5)
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 6: Solutions -->
+            <div class="slide" data-slide="6">
+                <div class="slide-header">
+                    <h2>Our Three Proposed Solutions</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="protocol-card">
+                        <h3>PMAP (Privacy-Maximizing Attestation Protocol)</h3>
+                        <ul>
+                            <li>Hardware security + Zero-knowledge proofs</li>
+                            <li><strong>Best for:</strong> High-security financial systems</li>
+                        </ul>
+                    </div>
+                    <div class="protocol-card blue">
+                        <h3>HAP (Hybrid Assurance Protocol)</h3>
+                        <ul>
+                            <li>Multi-factor: Biometric + Social + Behavioral</li>
+                            <li><strong>Best for:</strong> General-purpose platforms</li>
+                        </ul>
+                    </div>
+                    <div class="protocol-card purple">
+                        <h3>DAP (Decentralized Auditor Protocol)</h3>
+                        <ul>
+                            <li>Peer-to-peer verification + Economic incentives</li>
+                            <li><strong>Best for:</strong> Democratic voting, censorship-resistant systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 7: Results -->
+            <div class="slide" data-slide="7">
+                <div class="slide-header">
+                    <h2>Comparative Results</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>Overall Scores (out of 10)</h3>
+                    <div class="score-container">
+                        <div class="score-card">
+                            <h3>HAP</h3>
+                            <div class="score-number">7.3</div>
+                            <div class="score-label">Most balanced</div>
+                        </div>
+                        <div class="score-card">
+                            <h3>PMAP</h3>
+                            <div class="score-number">7.0</div>
+                            <div class="score-label">Highest security: 8.3</div>
+                        </div>
+                        <div class="score-card">
+                            <h3>DAP</h3>
+                            <div class="score-number">6.8</div>
+                            <div class="score-label">Max decentralization: 9.0</div>
+                        </div>
+                    </div>
+                    <h3>Key Strengths</h3>
+                    <div class="strength-item">
+                        <strong>PMAP:</strong> Privacy (9.5/10), Attack Resistance (8.5/10)
+                    </div>
+                    <div class="strength-item">
+                        <strong>HAP:</strong> Usability (7.0/10), Scalability (8.0/10)
+                    </div>
+                    <div class="strength-item">
+                        <strong>DAP:</strong> Decentralization (9.0/10), No central authority
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 8: Implications -->
+            <div class="slide" data-slide="8">
+                <div class="slide-header">
+                    <h2>Real-World Implications</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>Where This Matters</h3>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <h4>🗳️ Democratic Processes</h4>
+                            <p>Protect elections from bot manipulation</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>💬 Social Media</h4>
+                            <p>Maintain authentic human discourse</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>💰 Financial Systems</h4>
+                            <p>Prevent identity fraud at scale</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>📝 Content Platforms</h4>
+                            <p>Distinguish human-created from AI-generated content</p>
+                        </div>
+                    </div>
+                    <div class="challenge-box content-box">
+                        <h3>Ethical Considerations</h3>
+                        <ul>
+                            <li>Digital equity and accessibility</li>
+                            <li>Privacy protection</li>
+                            <li>Avoiding surveillance infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 9: Limitations -->
+            <div class="slide" data-slide="9">
+                <div class="slide-header">
+                    <h2>Limitations & Future Research</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="warning-box content-box">
+                        <h3>Current Limitations</h3>
+                        <ul>
+                            <li>Protocols remain theoretical (not yet implemented)</li>
+                            <li>Hardware dependency creates accessibility barriers</li>
+                            <li>Adversarial evolution requires continuous updates</li>
+                        </ul>
+                    </div>
+                    <div class="success-box content-box">
+                        <h3>Future Directions</h3>
+                        <ul>
+                            <li>Production implementation and empirical testing</li>
+                            <li>Quantum-resistant cryptography integration</li>
+                            <li>Governance framework development</li>
+                            <li>Longitudinal adoption studies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 10: Conclusion -->
+            <div class="slide" data-slide="10">
+                <div class="slide-header">
+                    <h2>Conclusion & Key Takeaways</h2>
+                </div>
+                <div class="slide-content">
+                    <h3>Core Contributions</h3>
+                    <ul style="font-size: 1.4em;">
+                        <li><span class="checkmark">✓</span> Comprehensive vulnerability documentation</li>
+                        <li><span class="checkmark">✓</span> Three novel AGI-resistant protocols</li>
+                        <li><span class="checkmark">✓</span> Systematic evaluation framework</li>
+                        <li><span class="checkmark">✓</span> Significant trilemma advancement</li>
+                    </ul>
+                    <div class="key-question">
+                        "AGI-resistant identity verification is achievable through systematic integration of cryptographic primitives, hardware security, and decentralized architectures."
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 11: Technical Deep-Dive (Backup) -->
+            <div class="slide" data-slide="11">
+                <div class="slide-header">
+                    <h2>Technical Deep-Dive: PMAP Architecture</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="technical-step">
+                        <strong>Step 1:</strong> User generates keys in TEE (Trusted Execution Environment)
+                    </div>
+                    <div class="technical-step">
+                        <strong>Step 2:</strong> Biometric enrollment processed in secure hardware
+                    </div>
+                    <div class="technical-step">
+                        <strong>Step 3:</strong> Zero-knowledge proof created
+                    </div>
+                    <div class="technical-step">
+                        <strong>Step 4:</strong> Credential recorded on distributed ledger
+                    </div>
+                    <div class="technical-step">
+                        <strong>Step 5:</strong> Verification without identity disclosure
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 11;
+        let isTransitioning = false;
+
+        function showSlide(n) {
+            if (isTransitioning) return;
+
+            const slides = document.querySelectorAll('.slide');
+
+            if (n > totalSlides) currentSlide = totalSlides;
+            else if (n < 1) currentSlide = 1;
+            else currentSlide = n;
+
+            isTransitioning = true;
+
+            // Fade out current slide
+            const activeSlide = document.querySelector('.slide.active');
+            if (activeSlide) {
+                activeSlide.classList.add('fade-out');
+                setTimeout(() => {
+                    activeSlide.classList.remove('active', 'fade-out');
+                    // Show new slide
+                    slides[currentSlide - 1].classList.add('active');
+                    isTransitioning = false;
+                }, 400);
+            } else {
+                slides[currentSlide - 1].classList.add('active');
+                isTransitioning = false;
+            }
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (isTransitioning) return;
+
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                if (currentSlide < totalSlides) changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                if (currentSlide > 1) changeSlide(-1);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                showSlide(1);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                showSlide(totalSlides);
+            }
+        });
+
+        // Initialize
+        showSlide(1);
+    </script>
+</body>
+</html>
